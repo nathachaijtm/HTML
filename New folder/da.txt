@@ -1,0 +1,14 @@
+CREATE VIEW data_product_customer  
+AS SELECT
+tbl_customer.cus_firstname,
+tbl_customer.cus_lastname,
+tbl_order.order_id,
+tbl_order.order_date,
+tbl_order.order_total
+FROM
+tbl_customer
+INNER JOIN
+tbl_order
+ON tbl_customer.cus_id = tbl_order.cus_id
+where
+order_total >= 501;
